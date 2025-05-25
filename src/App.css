@@ -1,5 +1,19 @@
 .right-login-bg {
   background-image: url('./assets/images/bg-pattern.svg');
   background-repeat: no-repeat;
-  background-position: 100% 10%;  
+  background-position: 100% 182px;  
+}
+
+.font-700{
+  font-weight: 700;
+  font-family: 'Satoshi-Bold';
+}
+.font-500{
+  font-weight: 500;
+  font-family: 'Satoshi-Medium';
+}
+.input-parent:has(input:focus) {
+  border-color: #F5207C !important;
+  box-shadow: 0px 0px 0px 2px #F5207C33;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
