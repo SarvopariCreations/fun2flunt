@@ -1,8 +1,11 @@
 
 import { useState } from "react";
-import { FaEye, FaEyeSlash, FaGoogle, FaFacebookF, FaEnvelope, FaLock } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle, FaFacebookF} from "react-icons/fa";
 import f2fLogo from "./assets/images/f2f-logo.svg";
 import bannerImg from "./assets/images/login-bg.jpg"
+import mail from "./assets/images/mail.svg"
+import password from "./assets/images/lock.svg"
+import './App.css'
 function App() {
   const [showPassword, setShowPassword] = useState(false);
   return (
@@ -14,15 +17,14 @@ function App() {
           alt="Banner"
           className="w-full h-full object-cover"
         />
-<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex items-end justify-center p-10">
-  <h1 className="text-white text-3xl font-bold flex items-center justify-center">
-    Explore the world of Pole<br />Dancing from your home
-  </h1>
-</div>
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent flex items-end justify-center p-10">
+    <h1 className="text-white text-3xl font-bold flex items-center justify-center">
+      Explore the world of Pole<br />Dancing from your home
+    </h1>
+  </div>
       </div>
-
       {/* Right Login */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-6">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 right-login-bg">
         <div className="max-w-md w-full flex flex-col justify-between min-h-[650px]">
           <div className="space-y-6">
             {/* Logo + Heading */}
@@ -30,17 +32,17 @@ function App() {
               <div className="text-2xl font-bold text-blue-600 flex justify-center">
                 <img src={f2fLogo} alt="f2f" />
               </div>
-              <h2 className="text-xl font-semibold text-gray-800">
+              <h2 className="font-bold text-black text-[28px] sm:text-[40px] lg:text-[60px] leading-tight">
                 Welcome back!
               </h2>
-              <p className="text-sm text-gray-500">Login to continue learning with Fit2Flaunt</p>
+              <p className="text-sm text-gray-400 text-[16px] sm:text-[20px] lg:text-[24px]">Login to continue learning with Fit2Flaunt</p>
             </div>
 
             {/* Form */}
             <form className="space-y-4">
               {/* Email Input */}
-              <div className="flex items-center gap-3 px-4 py-4 max-w-[581px] h-[64px] border border-[#CCCCCC] bg-white rounded-[16px] text-[#7F7F7F]">
-                <FaEnvelope />
+              <div className="flex items-center gap-3 px-4 py-4 max-w-[581px] h-[64px] border border-[#CCCCCC] bg-white rounded-[16px] text-[#7F7F7F]">                
+                <img src={mail} alt="f2f" />
                 <input
                   type="email"
                   placeholder="Email"
@@ -50,7 +52,7 @@ function App() {
 
               {/* Password Input */}
               <div className="flex items-center gap-3 px-4 py-4 max-w-[581px] h-[64px] border border-[#CCCCCC] bg-white rounded-[16px] text-[#7F7F7F] relative">
-                <FaLock />
+                <img src={password} alt="f2f" />
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"

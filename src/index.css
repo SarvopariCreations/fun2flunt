@@ -1,1 +1,6 @@
+@import url(./assets/css/font.css);
 @import "tailwindcss";
+
+body {
+    font-family: 'Satoshi-Regular';
+}
