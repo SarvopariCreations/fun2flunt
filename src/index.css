@@ -3,4 +3,16 @@
 
 body {
     font-family: 'Satoshi-Regular';
+    background-color: #F5F5F5;
+}
+
+.top-bg::after {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(180deg, #FFD2E5 0%, rgba(255, 210, 229, 0) 100%);
+    content: '';
+    z-index: -1;
 }
