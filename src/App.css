@@ -17,3 +17,16 @@
   box-shadow: 0px 0px 0px 2px #F5207C33;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+/* CSS Code */
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  background: #4f46e5; }

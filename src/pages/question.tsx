@@ -1,5 +1,4 @@
 import { useState } from "react";
-import f2fLogo from "../assets/images/f2f-logo.svg";
 import bannerImg from "../assets/images/login-bg.jpg";
 import firstTime from "../assets/images/first-timer-pole-dancer.svg";
 import BasicPole from "../assets/images/basic-pole-dancer.svg";
