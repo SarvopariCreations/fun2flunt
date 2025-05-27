@@ -1,3 +1,4 @@
+
 import Header from "../component/header";
 import video from "../assets/images/play.svg";
 import meet from "../assets/images/meet.svg";
@@ -11,6 +12,12 @@ import "swiper/css/navigation";
 // import "swiper/css/pagination";
 
 import clock from "../assets/images/clock.svg";
+import mark from "../assets/images/mark.svg";
+import icon1 from "../assets/images/icon-1.svg";
+import icon2 from "../assets/images/icon-2.svg";
+import icon3 from "../assets/images/icon-3.svg";
+import icon4 from "../assets/images/icon-4.svg";
+import avatar from "../assets/images/avatar.svg";
 import Card from "../component/Card"; // Import your Card component
 import Banner from "../component/banner";
 import PostCard from "../component/post";
@@ -23,8 +30,39 @@ import gPlay from "../assets/images/g-play.svg";
 import iosApp from "../assets/images/ios-app.svg";
 import CartCard from "../component/cartCard";
 import item from "../assets/images/item.png";
+import VideoDetailModal from "../component/VideoDetailModal";
+import React from "react";
+import { BsHeartArrow } from "react-icons/bs";
 
 function Home() {
+
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const [isFavorite, setIsFavorite] = React.useState(false);
+
+  // Dummy data for modal
+  const videoDetail = {
+    videoUrl: "https://www.youtube.com/embed/55XfCywmVNg",
+    videoName: "Your First Pole Class!",
+    description:
+      "Discover the art with Fit2Flaunt as you build strength, confidence, and learn foundational moves—no experience needed! This class is perfect for beginners and will guide you through every step. Get ready to unleash your inner dancer.",
+    skills: [
+      { name: "Fireman", icon:mark },
+      { name: "Sunkist", icon:mark },
+      { name: "Pole Climb", icon:mark },
+      { name: "V spin", icon:mark },
+    ],
+    equipment: [
+      { name: "F2F Pole", icon:icon1 },
+      { name: "F2F Pole Grip", icon:icon2 },
+      { name: "Towel", icon:icon3 },
+      { name: "F2F Pole wear", icon:icon4 },
+    ],
+    instructor: {
+      name: "Shelly Murdok",
+      avatar:avatar,
+    },
+  };
+
   return (
     <div className="top-bg">
       <Header />
@@ -401,6 +439,7 @@ function Home() {
               className="rounded-xl overflow-hidden"
             >
               <SwiperSlide>
+                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
                 <VideoCard
                   image={vImg}
                   name="Your First Pole Class!"
@@ -409,6 +448,7 @@ function Home() {
                   playIcon={vPlay}
                   progress={60}
                 />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
                 <VideoCard
@@ -461,6 +501,20 @@ function Home() {
                 />
               </SwiperSlide>
             </Swiper>
+
+            {/* Modal */}
+        <VideoDetailModal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+          videoUrl={videoDetail.videoUrl}
+          videoName={videoDetail.videoName}
+          isFavorite={isFavorite}
+          onFavorite={() => setIsFavorite((f) => !f)}
+          description={videoDetail.description}
+          skills={videoDetail.skills}
+          equipment={videoDetail.equipment}
+          instructor={videoDetail.instructor}
+        />
           </div>
         </div>
       </div>
