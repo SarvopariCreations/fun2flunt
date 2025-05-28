@@ -79,7 +79,7 @@ export default function Header() {
                   className="w-8 h-8 rounded-full"
                 />
                 <span className="absolute left-[25px] -translate-x-1/2 -bottom-1 bg-white rounded-full p-0.5 shadow w-[14px] h-[14px] flex items-center justify-center">
-                  <FaChevronDown className="text-gray-500 text-[10px]" />
+                  <FaChevronDown className="text-black text-[10px]" />
                 </span>
               </span>
             </button>
