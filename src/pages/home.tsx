@@ -3,6 +3,7 @@ import Header from "../component/header";
 import video from "../assets/images/play.svg";
 import meet from "../assets/images/meet.svg";
 import chevron from "../assets/images/chevron-right.svg";
+import activeTick from "../assets/images/active-tick.svg";
 import "../App.css";
 // CarouselComponent.jsx
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -99,8 +100,8 @@ function Home() {
                     </div>
                   </div>
                   <img
-                    src={chevron}
-                    alt="Banner"
+                    src={activeTick}
+                    alt="Active"
                     className="w-[20] h-[20] object-cover"
                   />
                 </li>
@@ -129,7 +130,7 @@ function Home() {
                 </li>
 
                 {/* Item 3 */}
-                <li className="flex items-center justify-between p-2 ps-0 rounded-lg transition">
+                <li className="flex items-center justify-between p-2 ps-0 rounded-lg transition opacity-50 cursor-not-allowed">
                   <div className="flex items-center gap-4">
                     <img
                       src={video}
@@ -240,7 +241,7 @@ function Home() {
                 <h3 className="text-[20px] font-semibold mb-2">
                   Strength Building 1
                 </h3>
-                <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-1 mb-4">
                   <span className="text-[16px] text-[#666666] font-500">
                     4 Weeks
                   </span>
@@ -451,6 +452,7 @@ function Home() {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
+                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
                 <VideoCard
                   image={vImg}
                   name="Your First Pole Class!"
@@ -459,8 +461,10 @@ function Home() {
                   playIcon={vPlay}
                   progress={60}
                 />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
+                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
                 <VideoCard
                   image={vImg}
                   name="Your First Pole Class!"
@@ -469,8 +473,10 @@ function Home() {
                   playIcon={vPlay}
                   progress={60}
                 />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
+                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
                 <VideoCard
                   image={vImg}
                   name="Your First Pole Class!"
@@ -479,8 +485,10 @@ function Home() {
                   playIcon={vPlay}
                   progress={60}
                 />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
+                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
                 <VideoCard
                   image={vImg}
                   name="Your First Pole Class!"
@@ -489,8 +497,10 @@ function Home() {
                   playIcon={vPlay}
                   progress={60}
                 />
+                </div>
               </SwiperSlide>
               <SwiperSlide>
+                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
                 <VideoCard
                   image={vImg}
                   name="Your First Pole Class!"
@@ -499,6 +509,7 @@ function Home() {
                   playIcon={vPlay}
                   progress={60}
                 />
+                </div>
               </SwiperSlide>
             </Swiper>
 
@@ -528,15 +539,15 @@ function Home() {
           }}
         >
           {/* Left: 60% */}
-          <div className="w-3/5 flex flex-col justify-center p-8">
+          <div className="w-3/5 flex flex-col justify-center p-8 pr-0 h-[268px]">
             {/* Logo */}
-            <div className="mb-4 w-[185px]">
+            <div className="mb-[20px] w-[185px]">
               <img src={f2fLogo} alt="f2f" />
             </div>
             {/* Heading */}
             <h2 className="text-2xl font-bold mb-2">Download the app now!!</h2>
             {/* Paragraph */}
-            <p className="text-black mb-6 text-[14px]">
+            <p className="text-black mb-[16px] text-[14px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore.
             </p>
@@ -561,7 +572,7 @@ function Home() {
             </div>
           </div>
           {/* Right: 40% */}
-          <div className="w-2/5 flex items-end justify-center pb-0 right-bg">
+          <div className="w-[282px] flex items-end justify-center pb-0 right-bg pr-[16px]">
             <img
               src={applicationImg}
               alt="App Preview"
@@ -571,9 +582,9 @@ function Home() {
         </div>
 
         <div className="w-1/2 flex bg-white border border-[#EBEBEB] rounded-[12px]">
-          <div className="w-full px-6 my-[20px] flex gap-[24px]">
+          <div className="w-full px-6 my-[24px] flex gap-[24px]">
             <div className="w-full">
-              <div className="flex items-start justify-between mb-[15px]">
+              <div className="flex items-start justify-between mb-[20px]">
                 <h2 className="text-[20px] font-700">Shop your perfect pole</h2>
                 <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer">
                   See all
@@ -593,8 +604,8 @@ function Home() {
                   <SwiperSlide>
                     <CartCard
                       image={item}
-                      description="Awesome Product"
-                      price="$19.99"
+                      description="Fit2Flaunt Pink Silicon Portable Dance Pole Kit"
+                      price="$294.99"
                       rating={4.5}
                       ratingCount={120}
                       onAddToCart={() => alert("Added to cart!")}
@@ -603,8 +614,8 @@ function Home() {
                   <SwiperSlide>
                     <CartCard
                       image={item}
-                      description="Awesome Product"
-                      price="$19.99"
+                      description="Fit2Flaunt Pink Silicon Portable Dance Pole Kit"
+                      price="$294.99"
                       rating={4.5}
                       ratingCount={120}
                       onAddToCart={() => alert("Added to cart!")}
@@ -613,8 +624,8 @@ function Home() {
                   <SwiperSlide>
                     <CartCard
                       image={item}
-                      description="Awesome Product"
-                      price="$19.99"
+                      description="Fit2Flaunt Pink Silicon Portable Dance Pole Kit"
+                      price="$294.99"
                       rating={4.5}
                       ratingCount={120}
                       onAddToCart={() => alert("Added to cart!")}

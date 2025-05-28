@@ -29,7 +29,7 @@ const PostCard: React.FC<PostCardProps> = ({
   commentCount,
   onShare,
 }) => (
-  <div className="box-border flex flex-col items-start p-6 gap-4 w-[auto] h-[228px] border border-[#E6E6E6] rounded-[12px] bg-white">
+  <div className="box-border flex flex-col items-start p-6 gap-3 w-[auto] m-h-[228px] border border-[#E6E6E6] rounded-[12px] bg-white">
     {/* Row 1 */}
     <div className="flex w-full items-start justify-between">
       <div className="flex items-center gap-3">
@@ -54,11 +54,10 @@ const PostCard: React.FC<PostCardProps> = ({
         </button>
       </div>
     </div>
-    {/* Row 2 */}
     <div className="font-700 text-[16px]">{heading} </div>
-    {/* Row 3 */}
+
     <div className="text-[14px] text-black">{content}</div>
-    {/* Last Row */}
+
     <div className="flex items-center gap-8 mt-auto">
       <button className="flex items-center gap-1 text-gray-500 hover:text-red-500">
         <img src={like} alt="" />

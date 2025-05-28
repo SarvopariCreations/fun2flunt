@@ -20,9 +20,9 @@ const VideoCard: React.FC<CardProps> = ({
   progress,
 }) => (
   <div className="relative w-full h-[190px] rounded-[6.95px] overflow-hidden">
-    {/* Background Image */}
+
     <img src={image} alt={name} className="w-full h-full object-cover" />
-    {/* Black Overlay (bottom to top) */}
+
     <div
       className="absolute left-0 top-0 w-full h-full pointer-events-none"
       style={{
@@ -31,9 +31,9 @@ const VideoCard: React.FC<CardProps> = ({
         borderRadius: "6.95px",
       }}
     />
-    {/* Bottom Section */}
+
     <div className="absolute bottom-0 left-0 w-full flex justify-between items-end px-4 py-3 z-10">
-      {/* Left: Video name and time */}
+
       <div>
         <div className="text-white font-700 text-base">{name}</div>
         <div className="flex items-center gap-1 text-white text-xs mt-1">
@@ -43,7 +43,7 @@ const VideoCard: React.FC<CardProps> = ({
           <span className="font-500 text-[14px]">{time}</span>
         </div>
       </div>
-      {/* Right: Play icon with circular progress */}
+
       <div className="w-10 h-10 relative flex items-center justify-center">
         <CircularProgressbar
           value={progress}
@@ -51,7 +51,7 @@ const VideoCard: React.FC<CardProps> = ({
           background
           styles={buildStyles({
             pathColor: "#F5207C",
-            trailColor: "#F5207C",
+            trailColor: "#FFFFFFB2",
             backgroundColor: "#FFFFFFB2",
           })}
         />
