@@ -6,12 +6,14 @@ import QuestionPage from './pages/question.tsx'
 import Header from './component/header.tsx'
 import Home from './pages/home.tsx'
 import SignUp from './pages/signup.tsx'
+import Explore from './pages/explore.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     {/* <App /> */}
     {/* <QuestionPage /> */}
-    <Home />
+    {/* <Home /> */}
     {/* <SignUp /> */}
+    <Explore />
   </StrictMode>,
 )

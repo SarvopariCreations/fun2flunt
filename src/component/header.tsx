@@ -74,7 +74,7 @@ export default function Header() {
             >
               <span className="relative">
                 <img
-                  src="https://i.pravatar.cc/30"
+                   src="https://i.pravatar.cc/30"
                   alt="Profile"
                   className="w-8 h-8 rounded-full"
                 />
