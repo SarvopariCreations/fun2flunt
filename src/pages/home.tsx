@@ -1,4 +1,3 @@
-
 import Header from "../component/header";
 import video from "../assets/images/play.svg";
 import meet from "../assets/images/meet.svg";
@@ -36,7 +35,6 @@ import React from "react";
 import { BsHeartArrow } from "react-icons/bs";
 
 function Home() {
-
   const [modalOpen, setModalOpen] = React.useState(false);
   const [isFavorite, setIsFavorite] = React.useState(false);
 
@@ -47,20 +45,20 @@ function Home() {
     description:
       "Discover the art with Fit2Flaunt as you build strength, confidence, and learn foundational moves—no experience needed! This class is perfect for beginners and will guide you through every step. Get ready to unleash your inner dancer.",
     skills: [
-      { name: "Fireman", icon:mark },
-      { name: "Sunkist", icon:mark },
-      { name: "Pole Climb", icon:mark },
-      { name: "V spin", icon:mark },
+      { name: "Fireman", icon: mark },
+      { name: "Sunkist", icon: mark },
+      { name: "Pole Climb", icon: mark },
+      { name: "V spin", icon: mark },
     ],
     equipment: [
-      { name: "F2F Pole", icon:icon1 },
-      { name: "F2F Pole Grip", icon:icon2 },
-      { name: "Towel", icon:icon3 },
-      { name: "F2F Pole wear", icon:icon4 },
+      { name: "F2F Pole", icon: icon1 },
+      { name: "F2F Pole Grip", icon: icon2 },
+      { name: "Towel", icon: icon3 },
+      { name: "F2F Pole wear", icon: icon4 },
     ],
     instructor: {
       name: "Shelly Murdok",
-      avatar:avatar,
+      avatar: avatar,
     },
   };
 
@@ -440,92 +438,110 @@ function Home() {
               className="rounded-xl overflow-hidden"
             >
               <SwiperSlide>
-                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
-                <VideoCard
-                  image={vImg}
-                  name="Your First Pole Class!"
-                  time="37:09 Min"
-                  timeIcon={clock}
-                  playIcon={vPlay}
-                  progress={60}
-                />
+                <div
+                  onClick={() => setModalOpen(true)}
+                  className="cursor-pointer"
+                >
+                  <VideoCard
+                    image={vImg}
+                    name="Your First Pole Class!"
+                    time="37:09 Min"
+                    timeIcon={clock}
+                    playIcon={vPlay}
+                    progress={60}
+                  />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
-                <VideoCard
-                  image={vImg}
-                  name="Your First Pole Class!"
-                  time="37:09 Min"
-                  timeIcon={clock}
-                  playIcon={vPlay}
-                  progress={60}
-                />
+                <div
+                  onClick={() => setModalOpen(true)}
+                  className="cursor-pointer"
+                >
+                  <VideoCard
+                    image={vImg}
+                    name="Your First Pole Class!"
+                    time="37:09 Min"
+                    timeIcon={clock}
+                    playIcon={vPlay}
+                    progress={60}
+                  />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
-                <VideoCard
-                  image={vImg}
-                  name="Your First Pole Class!"
-                  time="37:09 Min"
-                  timeIcon={clock}
-                  playIcon={vPlay}
-                  progress={60}
-                />
+                <div
+                  onClick={() => setModalOpen(true)}
+                  className="cursor-pointer"
+                >
+                  <VideoCard
+                    image={vImg}
+                    name="Your First Pole Class!"
+                    time="37:09 Min"
+                    timeIcon={clock}
+                    playIcon={vPlay}
+                    progress={60}
+                  />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
-                <VideoCard
-                  image={vImg}
-                  name="Your First Pole Class!"
-                  time="37:09 Min"
-                  timeIcon={clock}
-                  playIcon={vPlay}
-                  progress={60}
-                />
+                <div
+                  onClick={() => setModalOpen(true)}
+                  className="cursor-pointer"
+                >
+                  <VideoCard
+                    image={vImg}
+                    name="Your First Pole Class!"
+                    time="37:09 Min"
+                    timeIcon={clock}
+                    playIcon={vPlay}
+                    progress={60}
+                  />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
-                <VideoCard
-                  image={vImg}
-                  name="Your First Pole Class!"
-                  time="37:09 Min"
-                  timeIcon={clock}
-                  playIcon={vPlay}
-                  progress={60}
-                />
+                <div
+                  onClick={() => setModalOpen(true)}
+                  className="cursor-pointer"
+                >
+                  <VideoCard
+                    image={vImg}
+                    name="Your First Pole Class!"
+                    time="37:09 Min"
+                    timeIcon={clock}
+                    playIcon={vPlay}
+                    progress={60}
+                  />
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div onClick={() => setModalOpen(true)} className="cursor-pointer">
-                <VideoCard
-                  image={vImg}
-                  name="Your First Pole Class!"
-                  time="37:09 Min"
-                  timeIcon={clock}
-                  playIcon={vPlay}
-                  progress={60}
-                />
+                <div
+                  onClick={() => setModalOpen(true)}
+                  className="cursor-pointer"
+                >
+                  <VideoCard
+                    image={vImg}
+                    name="Your First Pole Class!"
+                    time="37:09 Min"
+                    timeIcon={clock}
+                    playIcon={vPlay}
+                    progress={60}
+                  />
                 </div>
               </SwiperSlide>
             </Swiper>
 
             {/* Modal */}
-        <VideoDetailModal
-          open={modalOpen}
-          onClose={() => setModalOpen(false)}
-          videoUrl={videoDetail.videoUrl}
-          videoName={videoDetail.videoName}
-          isFavorite={isFavorite}
-          onFavorite={() => setIsFavorite((f) => !f)}
-          description={videoDetail.description}
-          skills={videoDetail.skills}
-          equipment={videoDetail.equipment}
-          instructor={videoDetail.instructor}
-        />
+            <VideoDetailModal
+              open={modalOpen}
+              onClose={() => setModalOpen(false)}
+              videoUrl={videoDetail.videoUrl}
+              videoName={videoDetail.videoName}
+              isFavorite={isFavorite}
+              onFavorite={() => setIsFavorite((f) => !f)}
+              description={videoDetail.description}
+              skills={videoDetail.skills}
+              equipment={videoDetail.equipment}
+              instructor={videoDetail.instructor}
+            />
           </div>
         </div>
       </div>

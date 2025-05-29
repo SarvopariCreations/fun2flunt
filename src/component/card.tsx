@@ -29,10 +29,11 @@ const Card: React.FC<CardProps> = ({
     />
     {/* Top Label */}
     <div
-      className="experience-level-tag absolute left-0 top-[13.33px] w-[69px] h-[28.33px] flex flex-col items-start px-[10px] py-[6.67px] gap-[1.67px] bg-[rgba(0,0,0,0.2)] backdrop-blur-[3.33px] rounded-r-[16.67px] rounded-l-none z-10"
+      className="experience-level-tag absolute left-0 top-[13.33px] w-[auto] h-[28.33px] flex flex-col items-start px-[10px] py-[6.67px] gap-[1.67px] bg-[rgba(0,0,0,0.2)] backdrop-blur-[3.33px] rounded-r-[16.67px] rounded-l-none z-10"
       style={{
         borderRadius: "0 16.95px 16.95px 0",
         backdropFilter: "blur(3.33333px)",
+        zIndex: 1,
       }}
     >
       <div className="text-xs font-500 text-white">{label}</div>
