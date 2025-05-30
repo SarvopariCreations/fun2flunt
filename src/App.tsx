@@ -89,17 +89,17 @@ function App() {
                 Login
               </button>
             </form>
-            
+
             {/* Already logged in section */}
 
             <div className="already-logged-in-user hidden">
-              <div className="flex items-center justify-between px-4 py-3 gap-3 w-[100%] h-[70px] bg-[#FFF0F7] border border-[#FFD2E5] rounded-[16px] mx-auto">                
+              <div className="flex items-center justify-between px-4 py-3 gap-3 w-[100%] h-[70px] bg-[#FFF0F7] border border-[#FFD2E5] rounded-[16px] mx-auto">
                 <img
                   src={userImg}
                   alt="User"
                   className="w-10 h-10 rounded-full object-cover flex-none"
                   style={{ order: 0, flexGrow: 0 }}
-                />                
+                />
                 <div className="flex flex-col flex-1 ml-3">
                   <span className="font-bold text-base text-black leading-tight">
                     Camila Jacobs
@@ -107,7 +107,7 @@ function App() {
                   <span className="text-sm text-[#7F7F7F] leading-tight">
                     @camilajac
                   </span>
-                </div>                
+                </div>
                 <img
                   src={rightArrow}
                   alt="arrow"

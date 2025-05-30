@@ -3,9 +3,10 @@ import React from "react";
 interface CardProps {
   image: string;
   label?: string;
-  name: string;
-  time: string;
-  timeIcon?: string; // optional icon path
+  name?: string;
+  time?: string;
+  timeIcon?: string; // optional icon path,
+  timeSlot?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -14,6 +15,7 @@ const Card: React.FC<CardProps> = ({
   name,
   time,
   timeIcon,
+  timeSlot,
 }) => (
   <div className="relative w-[100%] h-[180.83px] rounded-[6.95px] overflow-hidden">
     {/* Image */}
@@ -45,6 +47,7 @@ const Card: React.FC<CardProps> = ({
         {timeIcon && <img src={timeIcon} alt="time" className="w-4 h-4" />}
         <span>{time}</span>
       </div>
+      <div className="text-white text-xs mt-1">{timeSlot}</div>
     </div>
   </div>
 );

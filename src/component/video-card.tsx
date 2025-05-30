@@ -9,6 +9,7 @@ interface CardProps {
   timeIcon?: string;
   playIcon: string;
   progress: number; // 0-100
+  label?: string; // e.g., "Beginner", "Intermediate"
 }
 
 const VideoCard: React.FC<CardProps> = ({
@@ -18,11 +19,20 @@ const VideoCard: React.FC<CardProps> = ({
   timeIcon,
   playIcon,
   progress,
+  label,
 }) => (
   <div className="relative w-full h-[190px] rounded-[6.95px] overflow-hidden">
-
     <img src={image} alt={name} className="w-full h-full object-cover" />
-
+    <div
+      className="experience-level-tag absolute left-0 top-[13.33px] w-[auto] h-[28.33px] flex flex-col items-start px-[10px] py-[6.67px] gap-[1.67px] bg-[rgba(0,0,0,0.2)] backdrop-blur-[3.33px] rounded-r-[16.67px] rounded-l-none z-10"
+      style={{
+        borderRadius: "0 16.95px 16.95px 0",
+        backdropFilter: "blur(3.33333px)",
+        zIndex: 1,
+      }}
+    >
+      <div className="text-xs font-500 text-white">{label}</div>
+    </div>
     <div
       className="absolute left-0 top-0 w-full h-full pointer-events-none"
       style={{
@@ -33,7 +43,6 @@ const VideoCard: React.FC<CardProps> = ({
     />
 
     <div className="absolute bottom-0 left-0 w-full flex justify-between items-end px-4 py-3 z-10">
-
       <div>
         <div className="text-white font-700 text-base">{name}</div>
         <div className="flex items-center gap-1 text-white text-xs mt-1">

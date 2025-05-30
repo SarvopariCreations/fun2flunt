@@ -5,6 +5,15 @@ import filter from "../assets/images/filter.svg";
 import Card from "../component/Card";
 import vImg from "../assets/images/video-1.jpg";
 import search from "../assets/images/search.svg";
+// CarouselComponent.jsx
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import VideoCard from "../component/video-card";
+
+import vPlay from "../assets/images/v-play.svg";
+import clock from "../assets/images/clock.svg";
 
 const cardData = [
   {
@@ -65,6 +74,46 @@ const cardData = [
   },
 ];
 
+const RecommendedCard = [
+  {
+    image: vImg,
+    label: "First Timer",
+    name: "Strength Building 1",
+    time: "60 min",
+    timeIcon: "",
+    timeSlot: "4 Weeks • 12 Classes",
+  },
+  {
+    image: vImg,
+    label: "First Timer",
+    name: "Strength Building 1",
+    timeSlot: "4 Weeks • 12 Classes",
+  },
+  {
+    image: vImg,
+    label: "First Timer",
+    name: "Strength Building 1",
+    timeSlot: "4 Weeks • 12 Classes",
+  },
+  {
+    image: vImg,
+    label: "First Timer",
+    name: "Strength Building 1",
+    timeSlot: "4 Weeks • 12 Classes",
+  },
+  {
+    image: vImg,
+    label: "First Timer",
+    name: "Strength Building 1",
+    timeSlot: "4 Weeks • 12 Classes",
+  },
+  {
+    image: vImg,
+    label: "First Timer",
+    name: "Strength Building 1",
+    timeSlot: "4 Weeks • 12 Classes",
+  },
+];
 const menuItems = [
   { name: "Skills", link: "/explore" },
   { name: "Programs", link: "/trending" },
@@ -117,7 +166,7 @@ function Explore() {
           </div>
         </div>
 
-        {/* Cards Grid */}
+        {/* Skills Cards Grid */}
         <div className="w-full box-border bg-white border border-[#EBEBEB] rounded-[12px] p-4 sm:p-6 mt-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5">
             {cardData.map((card, idx) => (
@@ -125,9 +174,125 @@ function Explore() {
             ))}
           </div>
         </div>
+
+        <div className="w-full box-border bg-white border border-[#EBEBEB] rounded-[12px] p-4 sm:p-6 mt-6 gap-4 ">
+          <label className="font-700 text-[20px] mb-[20px] flex">
+            Your Recommended Programs
+          </label>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5">
+            {RecommendedCard.map((card, idx) => (
+              <Card key={idx} {...card} />
+            ))}
+          </div>
+        </div>
+
+        <div className="w-full my-[20px] flex gap-[24px]">
+          <div className="w-full box-border bg-white border border-[#EBEBEB] rounded-[12px] p-6">
+            <div className="flex items-start justify-between mb-[15px]">
+              <h2 className="text-[20px] font-700">
+                Intermediate Pole Conditioning Program
+              </h2>
+              <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer"></div>
+            </div>
+            <div className="relative w-full mx-auto">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 3000 }}
+                loop={false}
+                spaceBetween={20}
+                slidesPerView={6}
+                className="rounded-xl overflow-hidden"
+              >
+                <SwiperSlide>
+                  <div className="cursor-pointer">
+                    <Card
+                      image={vImg}
+                      label="Beginner"
+                      name="Pole Basics"
+                      timeSlot="4 Weeks • 12 Classes"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="cursor-pointer">
+                    <Card
+                      image={vImg}
+                      label="Beginner"
+                      name="Pole Basics"
+                      timeSlot="4 Weeks • 12 Classes"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="cursor-pointer">
+                    <Card
+                      image={vImg}
+                      label="Beginner"
+                      name="Pole Basics"
+                      timeSlot="4 Weeks • 12 Classes"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="cursor-pointer">
+                    <Card
+                      image={vImg}
+                      label="Beginner"
+                      name="Pole Basics"
+                      timeSlot="4 Weeks • 12 Classes"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="cursor-pointer">
+                    <Card
+                      image={vImg}
+                      label="Beginner"
+                      name="Pole Basics"
+                      timeSlot="4 Weeks • 12 Classes"
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="cursor-pointer">
+                    <Card
+                      image={vImg}
+                      label="Beginner"
+                      name="Pole Basics"
+                      timeSlot="4 Weeks • 12 Classes"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full my-[20px] flex gap-[24px]">
+          <div className="w-full box-border bg-white border border-[#EBEBEB] rounded-[12px] p-6">
+            <div className="flex items-start justify-between mb-[15px] flex-col">
+              <h2 className="text-[20px] font-700">Recently viewed</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-5 w-[100%]">
+                {recentlyViewed.map((item, idx) => (
+                  <VideoCard key={idx} {...item} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
-
+const recentlyViewed = Array.from({ length: 10 }).map((_, idx) => ({
+  image: vImg,
+  name: `Your First Pole Class! #${idx + 1}`,
+  time: "37:09 Min",
+  timeIcon: clock,
+  playIcon: vPlay,
+  progress: 60,
+  label: "First Timer",
+}));
 export default Explore;

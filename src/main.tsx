@@ -7,7 +7,8 @@ import Header from "./component/header.tsx";
 import Home from "./pages/home.tsx";
 import SignUp from "./pages/signup.tsx";
 import Explore from "./pages/explore.tsx";
-import Details from "./pages/details.tsx";
+import ExploreDetails from "./pages/explore-details.tsx";
+import ProgramDetails from "./pages/program-details.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")!).render(
     {/* <Home /> */}
     {/* <SignUp /> */}
     {/* <Explore /> */}
-    <Details />
+    {/* <ExploreDetails /> */}
+    <ProgramDetails />
   </StrictMode>
 );
