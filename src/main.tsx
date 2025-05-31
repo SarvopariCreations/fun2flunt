@@ -9,6 +9,7 @@ import SignUp from "./pages/signup.tsx";
 import Explore from "./pages/explore.tsx";
 import ExploreDetails from "./pages/explore-details.tsx";
 import ProgramDetails from "./pages/program-details.tsx";
+import Profile from "./pages/profile.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
     {/* <SignUp /> */}
     {/* <Explore /> */}
     {/* <ExploreDetails /> */}
-    <ProgramDetails />
+    {/* <ProgramDetails /> */}
+    <Profile />
   </StrictMode>
 );

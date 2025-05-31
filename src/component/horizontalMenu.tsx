@@ -10,7 +10,7 @@ interface HorizontalMenuProps {
 
 function HorizontalMenu({ items }: HorizontalMenuProps) {
   return (
-    <nav className="horizontal-menu flex space-x-4">
+    <nav className="horizontal-menu flex space-x-6">
       {items.map((item) => (
         <a
           key={item.link}
