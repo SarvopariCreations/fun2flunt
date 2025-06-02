@@ -370,7 +370,7 @@ function Home() {
               modules={[Navigation, Pagination, Autoplay]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
+              autoplay={false}
               loop={false}
               spaceBetween={20}
               slidesPerView={4}
@@ -463,7 +463,7 @@ function Home() {
               modules={[Navigation, Pagination, Autoplay]}
               navigation
               pagination={{ clickable: true }}
-              autoplay={{ delay: 3000 }}
+              autoplay={false}
               loop={false}
               spaceBetween={20}
               slidesPerView={5}
