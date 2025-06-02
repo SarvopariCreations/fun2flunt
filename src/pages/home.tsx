@@ -31,7 +31,7 @@ import iosApp from "../assets/images/ios-app.svg";
 import CartCard from "../component/cartCard";
 import item from "../assets/images/item.png";
 import VideoDetailModal from "../component/VideoDetailModal";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BsHeartArrow } from "react-icons/bs";
 
 function Home() {
@@ -62,9 +62,35 @@ function Home() {
     },
   };
 
+  const [isSticky, setIsSticky] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+      lastScrollY.current = currentScroll;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="top-bg">
-      <Header />
+      <div
+        className={`z-50 w-full top-0 left-0 transition-all duration-300 ${
+          isSticky
+            ? "fixed bg-white shadow-md animate-slideDown"
+            : "relative bg-transparent"
+        }`}
+        style={{ willChange: "transform" }}
+      >
+        <Header />
+      </div>
       <div className="w-full p-6">
         <div className="font-bold text-[30px] leading-[40px] tracking-[0]">
           Hey, Camila <span>👋</span>
@@ -268,8 +294,10 @@ function Home() {
           </div>
         </div>
         <div className="w-1/2 bg-[#E6E6E6] border border-[#E6E6E6] rounded-[12px] p-[24px] h-[276px]">
-          <div className="flex items-start justify-between mb-[15px]">
-            <h2 className="text-[20px] font-700">Skills from your program</h2>
+          <div className="flex items-start justify-between relative">
+            <h2 className="text-[20px] font-700 absolute">
+              Skills from your program
+            </h2>
             <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer"></div>
           </div>
           <div className="relative w-full max-w-5xl mx-auto">
@@ -331,8 +359,10 @@ function Home() {
       </div>
       <div className="w-full px-6 my-[20px] flex gap-[24px]">
         <div className="w-full box-border bg-white border border-[#EBEBEB] rounded-[12px] p-6">
-          <div className="flex items-start justify-between mb-[15px]">
-            <h2 className="text-[20px] font-700">Recent community posts</h2>
+          <div className="flex items-start justify-between relative">
+            <h2 className="text-[20px] font-700 absolute">
+              Recent community posts
+            </h2>
             <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer"></div>
           </div>
           <div className="relative w-full mx-auto">
@@ -422,8 +452,10 @@ function Home() {
       </div>
       <div className="w-full px-6 my-[20px] flex gap-[24px]">
         <div className="w-full box-border bg-white border border-[#EBEBEB] rounded-[12px] p-6">
-          <div className="flex items-start justify-between mb-[15px]">
-            <h2 className="text-[20px] font-700">Recently viewed</h2>
+          <div className="flex items-start justify-between relative">
+            <h2 className="text-[20px] font-700 absolute top-0 left-0">
+              Recently viewed
+            </h2>
             <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer"></div>
           </div>
           <div className="relative w-full mx-auto">
@@ -599,8 +631,11 @@ function Home() {
 
         <div className="w-1/2 flex bg-white border border-[#EBEBEB] rounded-[12px]">
           <div className="w-full px-6 my-[24px] flex gap-[24px]">
-            <div className="w-full">
-              <div className="flex items-start justify-between mb-[20px]">
+            <div className="w-full relative">
+              <div
+                className="flex items-start justify-between mb-[20px] absolute"
+                style={{ width: "calc(100% - 140px)" }}
+              >
                 <h2 className="text-[20px] font-700">Shop your perfect pole</h2>
                 <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer">
                   See all

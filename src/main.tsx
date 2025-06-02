@@ -15,11 +15,11 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     {/* <App /> */}
     {/* <QuestionPage /> */}
-    {/* <Home /> */}
+    <Home />
     {/* <SignUp /> */}
     {/* <Explore /> */}
     {/* <ExploreDetails /> */}
     {/* <ProgramDetails /> */}
-    <Profile />
+    {/* <Profile /> */}
   </StrictMode>
 );

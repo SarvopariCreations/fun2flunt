@@ -31,6 +31,9 @@
   transition-timing-function: linear !important;
   position: relative;
 }
+.swiper-horizontal{
+  padding-top: 3rem !important;
+}
 
 .swiper-pagination-bullet {
   background: #4f46e5; }
@@ -41,15 +44,16 @@
   
     .swiper-button-next,
     .swiper-button-prev {
-      top: 16px !important;
+      top: 22px !important;
       bottom: auto !important;
-      width: 25px ! important;
-      height: 25px ! important;
-      background: #fff;
+      width: 30px ! important;
+      height: 30px ! important;
+      background: transparent !important;
       border-radius: 50%;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       color: #F5207C;
       z-index: 20;
+      border:1px solid #F5207C;
     }
 
     .swiper-button-next:after, .swiper-button-prev:after{
@@ -57,10 +61,26 @@
     }
   
     .swiper-button-next {
-      right: 16px !important;
+      right:0px !important;
       left: auto !important;
     }
   
     .swiper-button-prev {
-      right: 60px !important;
+      right:40px !important;
       left: auto !important; }
+
+
+            @keyframes slideDown {
+              from {
+                transform: translateY(-100%);
+                opacity: 0.7;
+              }
+      
+              to {
+                transform: translateY(0);
+                opacity: 1;
+              }
+            }
+      
+            .animate-slideDown {
+              animation: slideDown 0.3s ease;     }
