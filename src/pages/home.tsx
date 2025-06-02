@@ -631,13 +631,13 @@ function Home() {
 
         <div className="w-1/2 flex bg-white border border-[#EBEBEB] rounded-[12px]">
           <div className="w-full px-6 my-[24px] flex gap-[24px]">
-            <div className="w-full relative">
+            <div className="w-full relative items-center">
               <div
                 className="flex items-start justify-between mb-[20px] absolute"
-                style={{ width: "calc(100% - 140px)" }}
+                style={{ width: "calc(100% - 100px)" }}
               >
                 <h2 className="text-[20px] font-700">Shop your perfect pole</h2>
-                <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer">
+                <div className="flex items-center gap-2 text-base font-semibold text-[#F5207C] cursor-pointer mt-1">
                   See all
                 </div>
               </div>
