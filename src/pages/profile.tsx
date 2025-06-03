@@ -13,6 +13,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import lock from "../assets/images/lock.svg";
 import f2fLogo from "../assets/images/f2f-logo.svg";
+import SubscriptionCancelModal from "../component/subscriptionModal"; // <-- Import the modal
+
 const menuItems = [
   { name: "Profile Details", link: "/explore" },
   { name: "My Programs", link: "/trending" },
@@ -20,6 +22,7 @@ const menuItems = [
   { name: "My Subscriptions", link: "/new" },
   { name: "Change Password", link: "/new" },
 ];
+
 const cardData = [
   {
     image: vImg,
@@ -102,9 +105,11 @@ const RecommendedCard = [
   },
 ];
 function Profile() {
+  const [accordionOpen, setAccordionOpen] = useState(false);
   const [showCurrent, setShowCurrent] = useState(false);
   const [showNew, setShowNew] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [showCancelModal, setShowCancelModal] = useState(false); // <-- Add modal state
 
   return (
     <div className="top-bg min-h-screen">
@@ -115,7 +120,6 @@ function Profile() {
           <HorizontalMenu items={menuItems} />
         </div>
       </div>
-
       <div className="box-border flex flex-col items-start p-10 gap-10 w-[920px] h-[500px] bg-white border border-[#EBEBEB] rounded-[12px] flex-none order-1 flex-grow-0 m-auto">
         <div className="text-[24px] text-black font-700">Profile Details</div>
         <div className="flex items-center gap-6 w-full">
@@ -206,7 +210,6 @@ function Profile() {
           </button>
         </div>
       </div>
-
       <div className="flex justify-center mt-10 flex-col items-center">
         <div className="w-full px-6 mb-4">
           <nav className="w-max bg-white mx-auto rounded-2xl h-[30px] border border-[#EBEBEB] px-1">
@@ -454,7 +457,6 @@ function Profile() {
           </div>
         </div>
       </div>
-
       <div className="box-border flex flex-col items-start p-10 gap-6 max-w-[900px] bg-white border border-[#EBEBEB] rounded-[12px] flex-none order-1 flex-grow-0 m-auto">
         <div className="text-[24px] text-black font-700 mb-2">
           Change Password
@@ -656,7 +658,6 @@ function Profile() {
           </button>
         </div>
       </div>
-
       <div className="box-border flex flex-col items-start p-10 gap-6 max-w-[900px] bg-white border border-[#EBEBEB] rounded-[12px] flex-none order-1 flex-grow-0 m-auto mt-8">
         {/* Row: Heading and Actions */}
         <div className="flex w-full items-center justify-between mb-6">
@@ -665,7 +666,10 @@ function Profile() {
             <button className="text-[#F5207C] font-700 cursor-pointer">
               Manage Plans
             </button>
-            <button className="text-[#FC4949] hover:text-[#F5207C] font-700 cursor-pointer">
+            <button
+              className="text-[#FC4949] hover:text-[#F5207C] font-700 cursor-pointer"
+              onClick={() => setShowCancelModal(true)}
+            >
               Cancel Subscription
             </button>
           </div>
@@ -743,6 +747,130 @@ function Profile() {
           </div>
         </div>
       </div>
+      {/* Accordion for All Plans */}
+      <div className="box-border flex flex-col items-start gap-6 max-w-[900px] bg-white border border-[#EBEBEB] rounded-[12px] flex-none order-1 flex-grow-0 m-auto mt-8 mb-8">
+        {/* Accordion Header */}
+        <button
+          type="button"
+          className="w-full flex justify-between items-center px-6 py-4 rounded-lg"
+          onClick={() => setAccordionOpen((prev) => !prev)}
+        >
+          <span className="text-[24px] font-bold text-black">
+            Subscription History
+          </span>
+          <svg
+            className={`w-5 h-5 ml-4 transition-transform duration-200 ${
+              accordionOpen ? "rotate-180" : ""
+            }`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        {/* Accordion Content */}
+        {accordionOpen && (
+          <div className="bg-white border-x border-[#EBEBEB] rounded-b-lg py-0 w-[100%] px-6 gap-3">
+            <div className="flex justify-between items-center px-6 py-4 border border-[#E6E6E6] mb-3 rounded-2xl">
+              <div>
+                <div className="text-lg font-bold text-black">$19.99</div>
+                <div className="text-xs text-[#757575]">1 Month Plan</div>
+              </div>
+              <div className="flex flex-col items-end">
+                <span className="text-green-600 font-medium text-sm flex items-center gap-1">
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Paid
+                </span>
+                <span className="text-xs text-[#757575]">
+                  Paid on: 2025-06-01
+                </span>
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center px-6 py-4 border border-[#E6E6E6] mb-3 rounded-2xl">
+              <div>
+                <div className="text-lg font-bold text-black">$49.99</div>
+                <div className="text-xs text-[#757575]">3 Month Plan</div>
+              </div>
+              <div className="flex flex-col items-end">
+                <span className="text-green-600 font-medium text-sm flex items-center gap-1">
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Paid
+                </span>
+                <span className="text-xs text-[#757575]">
+                  Paid on: 2025-03-01
+                </span>
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center px-6 py-4 border border-[#E6E6E6] mb-7 rounded-2xl">
+              <div>
+                <div className="text-lg font-bold text-black">$99.99</div>
+                <div className="text-xs text-[#757575]">6 Month Plan</div>
+              </div>
+              <div className="flex flex-col items-end">
+                <span className="text-green-600 font-medium text-sm flex items-center gap-1">
+                  <svg
+                    className="w-5 h-5 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Paid
+                </span>
+                <span className="text-xs text-[#757575]">
+                  Paid on: 2024-12-01
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      <SubscriptionCancelModal
+        open={showCancelModal}
+        onClose={() => setShowCancelModal(false)}
+        onSubmit={() => {
+          // Do NOT call setFeedbackOpen(false) here!
+          // Just handle feedback data if needed.
+        }}
+      />
     </div>
   );
 }

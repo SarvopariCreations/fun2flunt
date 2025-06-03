@@ -32,7 +32,6 @@ import CartCard from "../component/cartCard";
 import item from "../assets/images/item.png";
 import VideoDetailModal from "../component/VideoDetailModal";
 import React, { useEffect, useRef, useState } from "react";
-import { BsHeartArrow } from "react-icons/bs";
 
 function Home() {
   const [modalOpen, setModalOpen] = React.useState(false);
