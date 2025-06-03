@@ -32,14 +32,29 @@ export default function Header() {
 
         {/* Center Navigation */}
         <nav
-          className={`${menuOpen
-            ? "flex absolute top-16 left-0 w-full flex-col bg-gray-800 md:bg-transparent md:static z-10 cursor-pointer"
-            : "hidden md:flex"
-            } flex-1 justify-center md:items-center md:space-x-6`}
+          className={`${
+            menuOpen
+              ? "flex absolute top-16 left-0 w-full flex-col bg-gray-800 md:bg-transparent md:static z-10 cursor-pointer"
+              : "hidden md:flex"
+          } flex-1 justify-center md:items-center md:space-x-6`}
         >
-          <NavItem icon={<img src={home} alt="Home" className="w-5 h-5" />} hoverIcon={<img src={homeHover} alt="Home" className="w-5 h-5" />} label="Home"/>
-          <NavItem icon={<img src={explore} alt="Home" className="w-5 h-5" />} hoverIcon={<img src={exploreHover} alt="Home" className="w-5 h-5" />} label="Explore" />
-          <NavItem icon={<img src={community} alt="Home" className="w-5 h-5" />} hoverIcon={<img src={community} alt="Home" className="w-5 h-5" />} label="Community" />
+          <NavItem
+            icon={<img src={home} alt="Home" className="w-5 h-5" />}
+            hoverIcon={<img src={homeHover} alt="Home" className="w-5 h-5" />}
+            label="Home"
+          />
+          <NavItem
+            icon={<img src={explore} alt="Home" className="w-5 h-5" />}
+            hoverIcon={
+              <img src={exploreHover} alt="Home" className="w-5 h-5" />
+            }
+            label="Explore"
+          />
+          <NavItem
+            icon={<img src={community} alt="Home" className="w-5 h-5" />}
+            hoverIcon={<img src={community} alt="Home" className="w-5 h-5" />}
+            label="Community"
+          />
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -52,9 +67,7 @@ export default function Header() {
 
         {/* Right - Actions */}
         <div className="hidden md:flex items-center space-x-4 flex-shrink-0">
-          <button
-            className="flex flex-row justify-center items-center px-4 py-2 gap-2 w-[96px] h-[38px] rounded-[12px] border border-[#FA98C3] text-[#F5207C] font-semibold transition box-border cursor-pointer"
-          >
+          <button className="flex flex-row justify-center items-center px-4 py-2 gap-2 w-[96px] h-[38px] rounded-[12px] border border-[#FA98C3] text-[#F5207C] font-semibold transition box-border cursor-pointer">
             <img src={shop} alt="Home" className="w-5 h-5" /> Shop
           </button>
 
@@ -74,7 +87,7 @@ export default function Header() {
             >
               <span className="relative">
                 <img
-                   src="https://i.pravatar.cc/30"
+                  src="https://i.pravatar.cc/30"
                   alt="Profile"
                   className="w-8 h-8 rounded-full"
                 />
@@ -85,18 +98,30 @@ export default function Header() {
             </button>
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-gray-900 rounded-md shadow-lg z-20 border border-gray-200">
-                <ul className="py-1 text-sm" aria-labelledby="dropdownDefaultButton">
+                <ul
+                  className="py-1 text-sm"
+                  aria-labelledby="dropdownDefaultButton"
+                >
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">My Profile</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                      My Profile
+                    </a>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                    <a href="#" className="block px-4 py-2 hover:bg-gray-100">
+                      Settings
+                    </a>
                   </li>
                   <li>
                     <hr className="my-1 border-gray-200" />
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-100 text-red-600">Logout</a>
+                    <a
+                      href="#"
+                      className="block px-4 py-2 hover:bg-gray-100 text-red-600"
+                    >
+                      Logout
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -131,9 +156,15 @@ export default function Header() {
             {dropdownOpen && (
               <div className="mt-2 w-full bg-white text-gray-900 rounded-md shadow-md z-10">
                 <ul className="py-2 text-sm">
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">My Profile</li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Settings</li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Logout</li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    My Profile
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    Settings
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    Logout
+                  </li>
                 </ul>
               </div>
             )}

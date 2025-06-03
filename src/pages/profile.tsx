@@ -12,7 +12,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import lock from "../assets/images/lock.svg";
-
+import f2fLogo from "../assets/images/f2f-logo.svg";
 const menuItems = [
   { name: "Profile Details", link: "/explore" },
   { name: "My Programs", link: "/trending" },
@@ -654,6 +654,93 @@ function Profile() {
           <button className="px-8 py-3 bg-[#F5207C] text-white rounded-2xl font-700 hover:bg-[#d81b6a] transition cursor-pointer">
             Save
           </button>
+        </div>
+      </div>
+
+      <div className="box-border flex flex-col items-start p-10 gap-6 max-w-[900px] bg-white border border-[#EBEBEB] rounded-[12px] flex-none order-1 flex-grow-0 m-auto mt-8">
+        {/* Row: Heading and Actions */}
+        <div className="flex w-full items-center justify-between mb-6">
+          <h2 className="text-[24px] text-black font-700">My Subscriptions</h2>
+          <div className="flex gap-4">
+            <button className="text-[#F5207C] font-700 cursor-pointer">
+              Manage Plans
+            </button>
+            <button className="text-[#FC4949] hover:text-[#F5207C] font-700 cursor-pointer">
+              Cancel Subscription
+            </button>
+          </div>
+        </div>
+        {/* Subscription Details */}
+        <div className="flex w-full items-start justify-between bg-[#F9F9F9] border border-[#EBEBEB] rounded-xl px-8 py-6">
+          {/* Left: Logo and Name */}
+          <div className="flex flex-col items-start gap-4">
+            <img
+              src={f2fLogo}
+              alt="f2Fluant"
+              className="h-[32px] object-contain"
+            />
+            <div>
+              <div className="text-xs text-[#757575]">Fit2Flaunt</div>
+              <div className="text-[20px] font-bold text-black">$19.99</div>
+              <div className="text-xs text-[#757575]">1 Month Plan</div>
+            </div>
+          </div>
+          {/* Center: Price */}
+          {/* Right: Status */}
+          <div className="flex flex-col items-end gap-2">
+            <button className="px-3 py-1 border border-[#F5207C] text-black rounded-full font-500 hover:bg-[#d81b6a] transition cursor-pointer text-sm hover:text-white">
+              Active
+            </button>
+            <div className="flex items-end gap-2 flex-col justify-end mt-7">
+              <span className="text-green-600 font-medium text-sm flex flex-row gap-1">
+                {" "}
+                <svg
+                  className="w-5 h-5 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Paid
+              </span>
+              <span className="text-[#757575] text-xs ml-2">
+                Paid on: 2025-06-01
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full">
+          <div className="flex flex-wrap md:flex-nowrap justify-between items-center gap-6">
+            <div className="flex flex-col">
+              <span className="text-sm text-[#757575] font-500">Validity</span>
+              <span className="text-[20px] text-black font-700">1 Month</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm text-[#757575] font-500">
+                Price/month
+              </span>
+              <span className="text-[20px] text-black font-700">$19.99</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm text-[#757575] font-500">Paid on</span>
+              <span className="text-[20px] text-black font-700">
+                May 30, 2024
+              </span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-sm text-[#757575] font-500">Due Date</span>
+              <span className="text-[20px] text-black font-700">
+                June 30, 2024
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
