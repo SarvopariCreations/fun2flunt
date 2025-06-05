@@ -815,10 +815,9 @@ function Profile() {
       </div>
       {/* Accordion for All Plans */}
       <div className="box-border flex flex-col items-start gap-6 max-w-[900px] bg-white border border-[#EBEBEB] rounded-[12px] flex-none order-1 flex-grow-0 m-auto mt-8 mb-8">
-        {/* Accordion Header */}
         <button
           type="button"
-          className="w-full flex justify-between items-center px-6 py-4 rounded-lg"
+          className="w-full flex justify-between items-center px-6 py-4 rounded-lg cursor-pointer"
           onClick={() => setAccordionOpen((prev) => !prev)}
         >
           <span className="text-[24px] font-bold text-black">
@@ -840,7 +839,6 @@ function Profile() {
             />
           </svg>
         </button>
-        {/* Accordion Content */}
         {accordionOpen && (
           <div className="bg-white border-x border-[#EBEBEB] rounded-b-lg py-0 w-[100%] px-6 gap-3">
             <div className="flex justify-between items-center px-6 py-4 border border-[#E6E6E6] mb-3 rounded-2xl">
