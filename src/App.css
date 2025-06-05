@@ -98,3 +98,11 @@
 .animate-slideDown button:hover{
   border: 1px solid #F5207C;
 }
+
+.ribbin-bg{
+    background-image: url('./assets/images/ribbin.svg');
+    background-repeat: no-repeat;
+    background-position: 8px 9px;
+      height: 73px;
+      width: 82px;
+}

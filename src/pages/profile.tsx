@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Header from "../component/header";
 import HorizontalMenu from "../component/HorizontalMenu";
-import search from "../assets/images/search.svg";
 import user from "../assets/images/user.svg";
 import atSign from "../assets/images/at-sign.svg";
 import email from "../assets/images/email.svg";
@@ -14,7 +13,15 @@ import "swiper/css/navigation";
 import lock from "../assets/images/lock.svg";
 import f2fLogo from "../assets/images/f2f-logo.svg";
 import SubscriptionCancelModal from "../component/subscriptionModal"; // <-- Import the modal
-
+import PriceBox from "../component/priceCard";
+import ListWithIcon from "../component/listWithIcon";
+import ManagePlan from "../component/ManagePlan";
+const features = [
+  "Unlock full access to Pole Dancing, Flexibility and Full Body Workouts",
+  "Endless training variety with or without equipment",
+  "Workout personalized to your fitness goals",
+  "One time 1 to 1 video call with instructor",
+];
 const menuItems = [
   { name: "Profile Details", link: "/explore" },
   { name: "My Programs", link: "/trending" },
@@ -104,13 +111,69 @@ const RecommendedCard = [
     timeSlot: "4 Weeks • 12 Classes",
   },
 ];
+const priceCards = [
+  {
+    label: "Popular",
+    duration: "1 Month",
+    price: "$19.00",
+    perMonth: "$19.99 /month",
+  },
+  {
+    label: "Popular",
+    duration: "3 Months",
+    price: "$49.00",
+    perMonth: "$16.33 /month",
+  },
+  {
+    label: "Popular",
+    duration: "6 Months",
+    price: "$89.00",
+    perMonth: "$14.83 /month",
+  },
+  {
+    label: "Popular",
+    duration: "12 Months",
+    price: "$159.00",
+    perMonth: "$13.25 /month",
+  },
+];
+
+const priceCard = [
+  {
+    label: "Popular",
+    duration: "1 Month",
+    price: "$19.00",
+    perMonth: "$19.99 /month",
+  },
+  {
+    label: "Popular",
+    duration: "3 Months",
+    price: "$49.00",
+    perMonth: "$16.33 /month",
+  },
+  {
+    label: "Popular",
+    duration: "6 Months",
+    price: "$89.00",
+    perMonth: "$14.83 /month",
+  },
+  {
+    label: "Popular",
+    duration: "12 Months",
+    price: "$159.00",
+    perMonth: "$13.25 /month",
+  },
+];
+
 function Profile() {
   const [accordionOpen, setAccordionOpen] = useState(false);
   const [showCurrent, setShowCurrent] = useState(false);
   const [showNew, setShowNew] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [showCancelModal, setShowCancelModal] = useState(false); // <-- Add modal state
-
+  const [showManagePlan, setShowManagePlan] = useState(false);
+  const [promoCode, setPromoCode] = useState(""); // <-- For input value
+  const [showPromoModal, setShowPromoModal] = useState(false);
   return (
     <div className="top-bg min-h-screen">
       <Header />
@@ -663,7 +726,10 @@ function Profile() {
         <div className="flex w-full items-center justify-between mb-6">
           <h2 className="text-[24px] text-black font-700">My Subscriptions</h2>
           <div className="flex gap-4">
-            <button className="text-[#F5207C] font-700 cursor-pointer">
+            <button
+              className="text-[#F5207C] font-700 cursor-pointer"
+              onClick={() => setShowManagePlan(true)}
+            >
               Manage Plans
             </button>
             <button
@@ -866,11 +932,136 @@ function Profile() {
       <SubscriptionCancelModal
         open={showCancelModal}
         onClose={() => setShowCancelModal(false)}
+        onSubmit={() => {}}
+      />
+      <div className="box-border flex flex-col items-start max-w-[900px] bg-white border border-[#EBEBEB] rounded-[12px] flex-none order-1 flex-grow-0 m-auto mt-8 mb-8  p-[40px]">
+        <h4 className="text-base text-black font-700 mb-4">
+          Get Unlimited access to all fitness programs
+        </h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 w-full">
+          {priceCards.map((card, idx) => (
+            <PriceBox
+              key={idx}
+              label={card.label}
+              duration={card.duration}
+              price={card.price}
+              perMonth={card.perMonth}
+            />
+          ))}
+        </div>
+        <div className="flex flex-col items-start p-4 gap-4 w-[100%] bg-[#F5F5F5] rounded-[8px] flex-none self-stretch flex-grow-0 text-[12px] mt-4">
+          <ListWithIcon items={features} />
+        </div>
+        <div className="flex items-center gap-2 text-[#000000] text-sm mt-3">
+          <svg
+            className="w-5 h-5 text-[#F5207C]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="#F5207C"
+              strokeWidth="2"
+              fill="none"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 16v-4m0-4h.01"
+              stroke="#F5207C"
+              strokeWidth="2"
+            />
+          </svg>
+          <span>
+            To avoid any charges, cancel your subscription anytime before your
+            new billing cycle begins.
+          </span>
+        </div>
+        <div className="flex flex-col items-center justify-center w-full mt-8 mb-4">
+          <button className="px-8 py-3 bg-[#F5207C] text-white rounded-2xl font-700 hover:bg-[#d81b6a] transition mb-4 text-base min-w-[270px]">
+            Subscribe Now
+          </button>
+          <div className="flex flex-col sm:flex-row items-center gap-2 mb-2">
+            <span className="text-[#757575] text-sm">
+              Have a promo code?{" "}
+              <a
+                href="#"
+                className="text-[#F5207C] font-500 text-sm hover:underline"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowPromoModal(true); // <-- Open modal on click
+                }}
+              >
+                Enter it here
+              </a>
+            </span>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-1">
+            <span className="text-[#757575] text-sm">
+              No worries, you can cancel anytime.
+            </span>
+            <button className="text-[#F5207C] font-500 text-sm hover:underline">
+              Restore
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <ManagePlan
+        open={showManagePlan}
+        features={features}
+        priceCards={priceCard} // <-- change prop name to priceCards and pass the array
+        onCancel={() => setShowManagePlan(false)}
         onSubmit={() => {
-          // Do NOT call setFeedbackOpen(false) here!
-          // Just handle feedback data if needed.
+          // handle submit logic here
+          setShowManagePlan(false);
         }}
       />
+
+      {showPromoModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+          <div className="bg-white rounded-lg shadow-lg w-full max-w-[544px] p-6">
+            <h2 className="text-xl font-700 mb-6">Apply Promo Code</h2>
+            <input
+              type="text"
+              className="box-border
+    flex flex-row items-start
+    px-4 py-3 gap-2
+    w-[496px] h-[45px]
+    bg-white
+    border border-[#E6E6E6]
+    rounded-[12px]
+    flex-none order-0
+    self-stretch
+    flex-grow-0 font-500"
+              placeholder="Enter your promo code"
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
+            />
+            <div className="flex justify-end gap-4 mt-6 border-t border-[#EBEBEB] pt-8">
+              <button
+                className="px-6 py-2 rounded-[12px] border border-[#F5207C] text-[#F5207C] font-700 hover:bg-[#FFF0F6] transition cursor-pointer"
+                onClick={() => setShowPromoModal(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className="px-6 py-2 rounded-[12px] bg-[#F5207C] text-white font-700 hover:bg-[#d81b6a] transition cursor-pointer"
+                onClick={() => {
+                  // Handle promo code apply logic here
+                  setShowPromoModal(false);
+                }}
+              >
+                Subscribe Now
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
