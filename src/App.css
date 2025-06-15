@@ -106,3 +106,9 @@
       height: 73px;
       width: 82px;
 }
+
+.left-community-sidebar .custom-voting-card,
+.left-community-sidebar .custom-post-card{
+background-color: #FFF0F6;
+border-color: #FFD2E5;
+}
