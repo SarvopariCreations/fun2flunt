@@ -14,7 +14,7 @@ import explore from "../assets/images/explore.svg";
 import community from "../assets/images/community.svg";
 import homeHover from "../assets/images/active-home.svg";
 import exploreHover from "../assets/images/explore-bold.svg";
-import communityHover from "../assets/images/explore-bold.svg";
+import communityHover from "../assets/images/community-active.svg";
 import shop from "../assets/images/cart.svg";
 import notification from "../assets/images/notification.svg";
 
@@ -52,7 +52,7 @@ export default function Header() {
           />
           <NavItem
             icon={<img src={community} alt="Home" className="w-5 h-5" />}
-            hoverIcon={<img src={community} alt="Home" className="w-5 h-5" />}
+            hoverIcon={<img src={communityHover} alt="Home" className="w-5 h-5" />}
             label="Community"
           />
         </nav>
