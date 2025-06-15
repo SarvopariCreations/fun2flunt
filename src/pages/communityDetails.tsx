@@ -14,10 +14,11 @@ import "swiper/css/navigation";
 import galleryIcon from "../assets/images/galley.svg";
 import pollIcon from "../assets/images/poll.svg";
 import cameraIcon from "../assets/images/camera-blue.svg";
+import back from "../assets/images/back-icon.svg";
 
 import postImg from "../assets/images/post-img.svg";
 import groupImg from "../assets/images/group-img.svg";
-
+import '../App.css'
 import Pin from "../assets/images/Pin.svg";
 
 import PostCard from "../component/post";
@@ -176,7 +177,52 @@ function CommunityDetails() {
             <img src={groupImg} alt="Gallery" className="max-h-[360px]" />
           </div>
         </div>
-        <div className="w-full flex flex-col gap-8 m-auto">
+        <div className="mb-5">
+          <div className="flex flex-row justify-start h-full items-center py-4 pb-2 text-[#757575]">
+            <img src={back} /> Back to Groups
+          </div>
+          <div className="space-y-1">
+            {/* First Row */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2 items-center justify-center">
+                <div className="font-700 text-lg flex flex-row items-center gap-1 border-r pr-2 border-[#E6E6E6]">Group Name<span className="text-yellow-400">
+                  {/* Example: Star Icon (Heroicons) */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.38-2.455a1 1 0 00-1.176 0l-3.38 2.455c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.049 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" />
+                  </svg>
+                </span>
+                </div>
+                <div className="flex gap-1 text-xs 2xl:text-sm text-[#000000] font-500">
+                  <span>2500 members</span>
+                  <span>•</span>
+                  <span>100 posts</span>
+                </div>
+              </div>
+              <div className="flex space-x-2">
+                <button className="bg-white border border-[#E6E6E6] text-[#F5207C] px-3 py-3 rounded-[12px] hover:bg-red-600 text-base font-700 hover:text-white transition cursor-pointer">
+                  Leave Group
+                </button>
+                <button className="bg-[#F5207C] text-white px-3 py-3 rounded-[12px] flex items-center hover:bg-blue-600 text-base font-700 transition cursor-pointer gap-1">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3332 13H9.6665" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11 14.3327V11.666" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.10673 7.24732C8.04006 7.24065 7.96006 7.24065 7.88673 7.24732C6.30006 7.19398 5.04006 5.89398 5.04006 4.29398C5.0334 2.66065 6.36006 1.33398 7.9934 1.33398C9.62673 1.33398 10.9534 2.66065 10.9534 4.29398C10.9534 5.89398 9.68673 7.19398 8.10673 7.24732Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.99336 14.5404C6.78003 14.5404 5.57336 14.2338 4.65336 13.6204C3.04003 12.5404 3.04003 10.7804 4.65336 9.70711C6.48669 8.48044 9.49336 8.48044 11.3267 9.70711" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  Invite
+                </button>
+              </div>
+            </div>
+            <div className="text-[#666666] text-sm w-full lg:max-w-[60%]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.
+              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex flex-col gap-2 m-auto">
+          <h4 className="font-700">Post</h4>
+          <div className="bg-white rounded-[16px] p-4 py-10 border border-[#EBEBEB]">
           <div className="w-full lg:max-w-[800px] flex flex-col gap-8 m-auto">
             <div className="bg-white rounded-[16px] p-4 border border-[#EBEBEB]">
               <div className="flex items-center gap-4 mb-3">
@@ -251,6 +297,7 @@ function CommunityDetails() {
               commentCount={4}
               onShare={() => alert("Shared!")}
             />
+          </div>
           </div>
         </div>
       </div>
