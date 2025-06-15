@@ -26,6 +26,7 @@ import CommunityPost from "../component/CommunityPost";
 import PollProgressBar from "../component/PollProgressBar";
 import VotingPost from "../component/VotingPost";
 import ProfileCard from "../component/ProfileCard";
+import PostModal from "../component/PostModal";
 
 const menuItems = [
   { name: "For you", link: "/explore" },
@@ -168,6 +169,7 @@ const priceCard = [
 ];
 
 function CommunityDetails() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="top-bg min-h-screen">
       <Header />
@@ -202,7 +204,7 @@ function CommunityDetails() {
                 <button className="bg-white border border-[#E6E6E6] text-[#F5207C] px-3 py-3 rounded-[12px] hover:bg-red-600 text-base font-700 hover:text-white transition cursor-pointer">
                   Leave Group
                 </button>
-                <button className="bg-[#F5207C] text-white px-3 py-3 rounded-[12px] flex items-center hover:bg-blue-600 text-base font-700 transition cursor-pointer gap-1">
+                <button className="bg-[#F5207C] text-white px-3 py-3 rounded-[12px] flex items-center hover:bg-blue-600 text-base font-700 transition cursor-pointer gap-1" onClick={() => setIsOpen(true)}>
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.3332 13H9.6665" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M11 14.3327V11.666" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -301,7 +303,11 @@ function CommunityDetails() {
           </div>
         </div>
       </div>
+
+      {isOpen && <PostModal onClose={() => setIsOpen(false)} />}
+
     </div>
+    
   );
 }
 export default CommunityDetails;
