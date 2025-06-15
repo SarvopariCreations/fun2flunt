@@ -11,6 +11,7 @@ import ExploreDetails from "./pages/explore-details.tsx";
 import ProgramDetails from "./pages/program-details.tsx";
 import Profile from "./pages/profile.tsx";
 import Community from "./pages/community.tsx";
+import CommunityDetails from "./pages/communityDetails.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")!).render(
     {/* <ExploreDetails /> */}
     {/* <ProgramDetails /> */}
     {/* <Profile /> */}
-    <Community />
+    {/* <Community /> */}
+    <CommunityDetails />
   </StrictMode>
 );
