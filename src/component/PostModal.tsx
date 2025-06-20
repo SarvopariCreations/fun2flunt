@@ -16,6 +16,19 @@ type Group = {
 const PostModal: React.FC<PostModalProps> = ({ onClose }) => {
   const [step, setStep] = useState<number>(1);
   const [selectedGroups, setSelectedGroups] = useState<Set<number>>(new Set());
+  const [showPollFields, setShowPollFields] = useState(false);
+  const [pollQuestion, setPollQuestion] = useState("");
+  const [pollOptions, setPollOptions] = useState(["", ""]);
+
+  const handleAddOption = () => {
+    setPollOptions([...pollOptions, ""]);
+  };
+
+  const handleOptionChange = (idx: number, value: string) => {
+    const newOptions = [...pollOptions];
+    newOptions[idx] = value;
+    setPollOptions(newOptions);
+  };
 
   const groups: Group[] = Array.from({ length: 10 }, (_, i) => ({
     id: i + 1,
@@ -55,16 +68,47 @@ const PostModal: React.FC<PostModalProps> = ({ onClose }) => {
               </button>
             </div>
             <div className="space-y-2">
-              <input
-                type="text"
-                placeholder="Title"
-                className="w-full border border-[#e6e6e6] rounded-[12px] p-4 py-2 focus:outline-none font-500"
-              />
-              <textarea
-                rows={5}
-                placeholder="Share your thoughts..."
-                className="w-full border border-[#e6e6e6] rounded-[12px] p-4 py-2 focus:outline-none font-500"
-              ></textarea>
+              {!showPollFields ? (
+                <>
+                  <input
+                    type="text"
+                    placeholder="Title"
+                    className="w-full border border-[#e6e6e6] rounded-[12px] p-4 py-2 focus:outline-none font-500"
+                  />
+                  <textarea
+                    rows={5}
+                    placeholder="Share your thoughts..."
+                    className="w-full border border-[#e6e6e6] rounded-[12px] p-4 py-2 focus:outline-none font-500"
+                  ></textarea>
+                </>
+              ) : (
+                <>
+                  <input
+                    type="text"
+                    placeholder="Ask question"
+                    value={pollQuestion}
+                    onChange={(e) => setPollQuestion(e.target.value)}
+                    className="w-full border border-[#e6e6e6] rounded-[12px] p-4 py-2 focus:outline-none font-500"
+                  />
+                  {pollOptions.map((opt, idx) => (
+                    <input
+                      key={idx}
+                      type="text"
+                      placeholder={`Option ${idx + 1}`}
+                      value={opt}
+                      onChange={(e) => handleOptionChange(idx, e.target.value)}
+                      className="w-full border border-[#e6e6e6] rounded-[12px] p-4 py-2 focus:outline-none font-500"
+                    />
+                  ))}
+                  <button
+                    type="button"
+                    className="font-700 mt-2 w-auto p-4 py-2 rounded-[12px] bg-white border border-[#E6E6E6] hover:border-[#F5207C]  text-[#F5207C] font-700 hover:bg-[#F5207C] transition cursor-pointer hover:text-white"
+                    onClick={handleAddOption}
+                  >
+                    + Add option
+                  </button>
+                </>
+              )}
             </div>
 
             {/* Row 3: Icons */}
@@ -74,7 +118,12 @@ const PostModal: React.FC<PostModalProps> = ({ onClose }) => {
                   <img src={galleryIcon} alt="Gallery" className="w-5 h-5" />
                   <span className="text-base font-500">Gallery</span>
                 </button>
-                <button className="flex items-center gap-2 text-black hover:text-[#F5207C] transition cursor-pointer">
+                <button
+                  className={`flex items-center gap-2 text-black hover:text-[#F5207C] transition cursor-pointer ${
+                    showPollFields ? "text-[#F5207C]" : ""
+                  }`}
+                  onClick={() => setShowPollFields(true)}
+                >
                   <img src={pollIcon} alt="Poll" className="w-5 h-5" />
                   <span className="text-base font-500">Poll</span>
                 </button>
@@ -86,16 +135,24 @@ const PostModal: React.FC<PostModalProps> = ({ onClose }) => {
             </div>
 
             {/* Row 4: Next Button */}
-            <div className="flex justify-end border-t border-gray-200 pt-4">
+            <div className="flex justify-between border-t border-gray-200 pt-4">
+              {showPollFields && (
+                <button
+                  className="bg-transparent border-0 text-[#757575] font-700 hover:text-gray-700 cursor-pointer mr-4"
+                  onClick={() => setShowPollFields(false)}
+                >
+                  Remove Poll
+                </button>
+              )}
               <button
-                className="bg-[#F5207C] text-white px-4 py-2 rounded-[12px] hover:bg-gray-700 cursor-pointer min-w-[100px] font-700"
+                className="bg-[#F5207C] text-white px-4 py-2 rounded-[12px] hover:bg-gray-700 cursor-pointer min-w-[100px] font-700 ml-auto"
                 onClick={() => setStep(2)}
               >
                 Next
               </button>
             </div>
           </div>
-        )}        
+        )}
         {step === 2 && (
           <div className="space-y-4">
             {/* Row 1: Back + Title + Close */}
@@ -107,7 +164,7 @@ const PostModal: React.FC<PostModalProps> = ({ onClose }) => {
                 ← Select Group
               </button>
               <button
-                className="text-gray-500 hover:text-black"
+                className="text-gray-500 hover:text-black cursor-pointer"
                 onClick={onClose}
               >
                 ✕

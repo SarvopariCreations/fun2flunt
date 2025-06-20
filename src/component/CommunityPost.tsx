@@ -47,7 +47,7 @@ const CommunityPost: React.FC<PostCardProps> = ({
               {company}
             </a>
           </div>
-          <div className="text-[14px] text-[#7F7F7F]">{time}</div>
+          <div className="text-[14px] text-[#7F7F7F] text-left">{time}</div>
         </div>
       </div>
       <div className="flex flex-col items-end">
@@ -56,9 +56,9 @@ const CommunityPost: React.FC<PostCardProps> = ({
         </button>
       </div>
     </div>
-    <div className="font-700 text-[16px]">{heading} </div>
+    <div className="font-700 text-[16px] text-left">{heading} </div>
 
-    <div className="text-[14px] text-black">{content}</div>
+    <div className="text-[14px] text-black text-left">{content}</div>
 
     <div>
       {/* <img src={PostImg} alt="Post" className="w-full h-auto rounded-lg" /> */}

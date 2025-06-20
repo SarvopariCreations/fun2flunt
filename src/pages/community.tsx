@@ -174,7 +174,7 @@ function Community() {
           <HorizontalMenu items={menuItems} />
         </div>
 
-        <div className="w-full lg:max-w-[1232px] flex flex-col lg:flex-row gap-8 m-auto lg:hidden">
+        <div className="w-full lg:max-w-[1232px] flex flex-col lg:flex-row gap-8 m-auto lg:flex">
           <div className="w-full lg:max-w-[400px] border border-[#EBEBEB] rounded-[12px] bg-white left-community-sidebar">
             <div className="w-full">
               <div className="w-full box-border p-6">
@@ -247,6 +247,7 @@ function Community() {
               </div>
             </div>
           </div>
+
           <div className="w-full lg:max-w-[800px] flex flex-col gap-8">
             <div className="bg-white rounded-[16px] p-4 border border-[#EBEBEB]">
               <div className="flex items-center gap-4 mb-3">
@@ -338,7 +339,7 @@ function Community() {
                 autoplay={false}
                 loop={false}
                 spaceBetween={20}
-                slidesPerView={6}
+                slidesPerView={4}
                 className="rounded-xl overflow-hidden"
               >
                 {[...Array(10)].map((_, idx) => (
@@ -362,7 +363,7 @@ function Community() {
               <h2 className="text-[20px] font-700 relative mb-4">All Groups</h2>
             </div>
             <div className="relative w-full mx-auto">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
                 {[...Array(10)].map((_, idx) => (
                   <ProfileCard
                     image="https://randomuser.me/api/portraits/men/32.jpg"

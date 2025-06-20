@@ -26,7 +26,7 @@ export default function Header() {
     <header className="">
       <div className="w-full mx-auto px-6 py-3 flex justify-between items-center relative">
         {/* Left - Logo */}
-        <div className="text-xl font-bold flex-shrink-0 max-w-[144px]">
+        <div className="text-xl font-bold flex-shrink-0 max-w-[144px] cursor-pointer">
           <img src={f2fLogo} alt="f2Fluant" />
         </div>
 

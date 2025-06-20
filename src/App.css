@@ -120,3 +120,7 @@ border-color: #FFD2E5;
   background-size: cover;
   width: 100%;
 }
+.comment-list-wrap .custom-post-card{
+  border: none;  
+  padding: 0px;
+}
